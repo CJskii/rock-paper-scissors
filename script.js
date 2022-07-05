@@ -18,15 +18,15 @@ function playRound(playerSelection, computerSelection){
     console.log("Your choice: " + playerSelection)
     console.log("Computer choice: " + computerSelection);
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        console.log("You won. Rock beats Scissors");
+        console.log("You won! Rock beats Scissors");
     } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-        console.log("You won. Paper beats Scissors");
+        console.log("You won! Paper beats Scissors");
     } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-        console.log("You won. Scissors beats Paper");
+        console.log("You won! Scissors beats Paper");
     } else if (playerSelection === computerSelection){
         console.log("Draw. Try again");
     } else {
-        console.log("You lost... Better luck next time");
+        console.log("You lose! Better luck next time");
     }
 }
 
