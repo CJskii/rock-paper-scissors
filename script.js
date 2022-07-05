@@ -1,38 +1,39 @@
 const myArray = ['Rock', 'Paper', 'Scissors'];
-let playerSelection = window.prompt("Input Rock, Paper or Scissors: "); // prompts user for input
-playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+let playerSelection = 0 //window.prompt("Input Rock, Paper or Scissors: "); // prompts user for input
+//playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 const computerSelection = computerPlay();
-
-
 
 function computerPlay() {
     return myArray[Math.floor(Math.random() * myArray.length)]
 }
 
-alert("Your selection is " + playerSelection);
+//alert("Your selection is " + playerSelection);
 
-//console.log(computerSelection);
 
 
 function playRound(playerSelection, computerSelection){
-    console.log("Your choice: " + playerSelection)
-    console.log("Computer choice: " + computerSelection);
-    if (playerSelection == "Rock" && computerSelection == "Scissors"){
+    let player = playerSelection
+        player = window.prompt("Input Rock, Paper or Scissors: "); // prompts user for input
+        player = player.charAt(0).toUpperCase() + player.slice(1).toLowerCase();
+    let computer = myArray[Math.floor(Math.random() * myArray.length)]
+    console.log("Your choice: " + player)
+    console.log("Computer choice: " + computer);
+    if (player == "Rock" && computer == "Scissors"){
         console.log("You won! Rock beats Scissors")
         let winner = "Won"
         alert("Game " + winner);
         return winner;
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
+    } else if (player == "Paper" && computer == "Scissors"){
         console.log("You won! Paper beats Scissors");
         let winner = "Won"
         alert("Game " + winner);
         return winner;
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
+    } else if (player == "Scissors" && computer == "Paper"){
         console.log("You won! Scissors beats Paper");
         let winner = "Won"
         alert("Game " + winner);
         return winner;
-    } else if (playerSelection === computerSelection){
+    } else if (player === computer){
         console.log("Draw. Try again");
         let winner = "Draw"
         alert("Game " + winner);
@@ -46,16 +47,17 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-playRound(playerSelection, computerSelection); // plays game and prints output to console
-
-
-/*
-
-console.log(playRound(playerSelection, computerSelection));
+//playRound(playerSelection, computerSelection); // plays game and prints output to console
 
  function game(){
-
+    for (let i = 0; i < 5; i++ ){
+        playRound(playerSelection, computerSelection);
+    }
 }
+
+game(); 
+
+
 
 /* Player Inputs a String 
 Player click "play"
