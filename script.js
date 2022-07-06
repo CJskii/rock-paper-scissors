@@ -52,13 +52,13 @@ function playRound(playerSelection, computerSelection){
     }   //console.log(point);
     let outcome
     if (point > 0){
-        outcome = "Winner"
+        outcome = "You won!"
         console.log("Final outcome of 5 games: " + outcome);
     } else if (point < 0){
-        outcome = "Loser"
+        outcome = "You lost!"
         console.log("Final outcome of 5 games: " + outcome);
     } else {
-        outcome = "Drawwwww"
+        outcome = "Draw. Try again!"
         console.log("Final outcome of 5 games: " + outcome);
     } 
 }
