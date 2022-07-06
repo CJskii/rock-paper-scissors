@@ -21,27 +21,27 @@ function playRound(playerSelection, computerSelection){
     console.log("*Your choice: " + player) // prints in the console
     console.log("**Computer choice: " + computer); // prints in the console
     if (player == "Rock" && computer == "Scissors"){
-        //console.log("***You won! Rock beats Scissors")
+        console.log("***You won! Rock beats Scissors")
         let winner = "Won"
         //console.log(winner);
         return winner;
     } else if (player == "Paper" && computer == "Rock"){
-        //console.log("***You won! Paper beats Scissors"); // prints in the console
+        console.log("***You won! Paper beats Scissors"); // prints in the console
         let winner = "Won"
         //console.log(winner);
         return winner;
     } else if (player == "Scissors" && computer == "Paper"){
-        //console.log("***You won! Scissors beats Paper"); // prints in the console
+        console.log("***You won! Scissors beats Paper"); // prints in the console
         let winner = "Won"
         //console.log(winner);
         return winner;
     } else if (player === computer){
-        //console.log("***Draw. Try again"); // prints in the console
+        console.log("***Draw. Try again"); // prints in the console
         let winner = "Draw"
         //console.log(winner);
         return winner;
     } else {
-        //console.log("***You lose! Better luck next time"); // prints in the console
+        console.log("***You lose! Better luck next time"); // prints in the console
         let winner = "Lost"
         //console.log(winner);
         return winner;
@@ -66,27 +66,40 @@ function playRound(playerSelection, computerSelection){
         //console.log("**Computer choice: " + computer); // prints in the console
         if (winner == "Won"){
             //output = playRound(playerSelection, computerSelection)
-            console.log("***You won! Congratulations"); // prints in the console
+            //console.log("***You won! Congratulations"); // prints in the console
             //console.log(output);
             point++
-            console.log(point)
+            //console.log(point)
         } else if (winner == "Lost"){
             //output = playRound(playerSelection, computerSelection)
-            console.log("***You lose! Better luck next time"); // prints in the console
+            //console.log("***You lose! Better luck next time"); // prints in the console
             //console.log(output)
             point--
-            console.log(point)
+            //console.log(point)
         } else if (winner == "Draw") {
             //output = playRound(playerSelection, computerSelection)
-            console.log("***Draw. Try again"); // prints in the console
+            //console.log("***Draw. Try again"); // prints in the console
             //console.log(output)
             point
-            console.log(point)
+            //console.log(point)
         }
-    }   alert(point);
+    }   //console.log(point);
+    let outcome
+    if (point > 0){
+        outcome = "Winner"
+        console.log("Final outcome of 5 games: " + outcome);
+    } else if (point < 0){
+        outcome = "Loser"
+        console.log("Final outcome of 5 games: " + outcome);
+    } else {
+        outcome = "Drawwwww"
+        console.log("Final outcome of 5 games: " + outcome);
+    } 
 }
 
 game(); 
+
+//playRound()
 
 
 
