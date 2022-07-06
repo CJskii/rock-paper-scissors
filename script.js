@@ -18,14 +18,14 @@ function playRound(playerSelection, computerSelection){
         player = window.prompt("Input Rock, Paper or Scissors: "); // prompts user for input
         player = player.charAt(0).toUpperCase() + player.slice(1).toLowerCase();
     let computer = myArray[Math.floor(Math.random() * myArray.length)]
-    //console.log("*Your choice: " + player) // prints in the console
-    //console.log("**Computer choice: " + computer); // prints in the console
+    console.log("*Your choice: " + player) // prints in the console
+    console.log("**Computer choice: " + computer); // prints in the console
     if (player == "Rock" && computer == "Scissors"){
         //console.log("***You won! Rock beats Scissors")
         let winner = "Won"
         //console.log(winner);
         return winner;
-    } else if (player == "Paper" && computer == "Scissors"){
+    } else if (player == "Paper" && computer == "Rock"){
         //console.log("***You won! Paper beats Scissors"); // prints in the console
         let winner = "Won"
         //console.log(winner);
@@ -70,17 +70,17 @@ function playRound(playerSelection, computerSelection){
             //console.log(output);
             point++
             console.log(point)
-        } else if (winner = "Lost"){
+        } else if (winner == "Lost"){
             //output = playRound(playerSelection, computerSelection)
             console.log("***You lose! Better luck next time"); // prints in the console
             //console.log(output)
             point--
             console.log(point)
-        } else {
+        } else if (winner == "Draw") {
             //output = playRound(playerSelection, computerSelection)
             console.log("***Draw. Try again"); // prints in the console
             //console.log(output)
-            point += 0
+            point
             console.log(point)
         }
     }   alert(point);
