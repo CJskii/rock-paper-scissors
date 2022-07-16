@@ -39,6 +39,28 @@ body {
     box-shadow: -6px 6px 0 0 var(--color-brand)
 }
 
+img{
+    width: 400px;
+}
 
+/*img:hover{
+    transform: scale(1.2);
+}
+
+
+
+/* CARD */
+
+.card-custom, .card-custom-image{
+    overflow: hidden;
+}
+
+.card-custom, .card-custom-image img{
+    transition: all 0.4s ease;
+}
+
+.card-custom:hover, .card-custom-image img{
+    transform: scale(1.2);
+}
 
 
