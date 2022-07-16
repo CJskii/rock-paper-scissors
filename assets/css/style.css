@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+/*BLUE-GOLDEN THEME*/
+:root {
+    --color-body: rgb(202, 200, 187);
+    --color-heading: rgb(238, 243, 219);
+    --color-base: rgb(2, 35, 65);
+    --color-base2: rgb(2, 20, 39);
+    --color-brand: rgb(242, 169, 40);
+    --color-brand2: rgb(242, 169, 0);
+    --sidbar-width: 240px;
+    --font-base: "Bai Jamjuree";
+}
+
+
+
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+}
+
+.full-height{
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid rgba(255,255,255,0.1); 
+}
+
+.shadow-effect{
+    transition: all 0.5s
+}
+
+.shadow-effect:hover{
+    box-shadow: -6px 6px 0 0 var(--color-brand)
+}
+
+
+
+
