@@ -20,6 +20,8 @@ body {
     font-family: var(--font-base), sans-serif;
 }
 
+
+
 .full-height{
     min-height: 100vh;
     height: 100%;
@@ -67,3 +69,31 @@ img{
     border: 2px black solid;
 }
 
+#output{
+    border: 2px black solid;
+}
+
+#output p, .card-custom p{
+    color: var(--color-brand)
+}
+
+
+.css-button-fully-rounded--grey {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #495057;
+    background: var(--color-base2);
+  }
+  .css-button-fully-rounded--grey:hover {
+    background: var(--color-base);
+    color: var(--color-brand);
+  }
