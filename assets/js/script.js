@@ -4,62 +4,85 @@ const computerSelection = computerPlay();
 let winner = 0;
 let point = 0;
 
+
 function computerPlay() {
     return myArray[Math.floor(Math.random() * myArray.length)]
 }
 
-function playerPrint(){
+function playerPrint(){ // function to print player selection in document
     let player = playerSelection
     const output = document.querySelector('#output') // target output div
+    if (document.getElementById('#player') != null){
+        document.getElementById('#player').remove();
+    }    
     const playerPrint = document.createElement('p')
+    playerPrint.setAttribute('id', '#player')
+    playerPrint.setAttribute('class', 'h5 p-1')
+    playerPrint.setAttribute('data-aos', 'fade-left')
     console.log(this.output)
     playerPrint.textContent = `Your choice: ${player}`
     output.appendChild(playerPrint);
     return player;
 }
 
-function computerPrint(){
+function computerPrint(){ // function to print computer selection in document
     let computer = computerPlay()
     const output = document.querySelector('#output')
+    if (document.getElementById('#computer') != null){
+        document.getElementById('#computer').remove();
+    }    
     const computerPrint = document.createElement('p')
     computerPrint.setAttribute('id', '#computer')
+    computerPrint.setAttribute('class', 'h5 p-1')
+    computerPrint.setAttribute('data-aos', 'fade-right')
+    computerPrint.setAttribute('data-aos-delay', '300')
     computerPrint.textContent = `Computer choice: ${computer}`
     output.appendChild(computerPrint);
     return computer;
 }
 
-
-function clearPrint(){
+function winnerPrint(){ // function to print winner outcome in document
     const output = document.querySelector('#output')
-    const computer = document.querySelector('#computer')
-    const player = document.querySelector('#player')
+    const winnerPrint = document.createElement('p')
+    if (document.getElementById('#outcome') != null){
+        document.getElementById('#outcome').remove()
+    }
+    winnerPrint.setAttribute('id', '#outcome')
+    winnerPrint.setAttribute('class', 'h4 p-1')
+    winnerPrint.setAttribute('data-aos', 'fade-up')
+    winnerPrint.setAttribute('data-aos-delay', '600')
+    winnerPrint.textContent = `${winner}`
+    output.appendChild(winnerPrint)
+    return winner;
 }
 
+
 function playRound(playerSelection, computerSelection){
+    
     player = playerPrint();
     computer = computerPrint();
 
     console.log("*Your choice: " + player) // prints in the console
     console.log("**Computer choice: " + computer); // prints in the console
     if (player == "Rock" && computer == "Scissors"){
-        console.log("***You won! Rock beats Scissors")
-        let winner = "Won"
+        winner = "You won! Rock beats Scissors"
+        winnerPrint()
         return winner;
     } else if (player == "Paper" && computer == "Rock"){
-        console.log("***You won! Paper beats Scissors"); // prints in the console
-        let winner = "Won"
+        winner = "You won! Paper beats Scissors"
+        winnerPrint()
         return winner;
     } else if (player == "Scissors" && computer == "Paper"){
-        console.log("***You won! Scissors beats Paper"); // prints in the console
-        let winner = "Won"
+        winner = "You won! Scissors beats Paper"
+        winnerPrint()
         return winner;
     } else if (player === computer){
-        console.log("***Draw. Try again"); // prints in the console
-        let winner = "Draw"
+        winner = "Draw. Try again"
+        winnerPrint()
         return winner;
     } else {
-        console.log("***You lose! Better luck next time"); // prints in the console
-        let winner = "Lost"
+        winner = "You lose! Better luck next time"
+        winnerPrint()
         return winner;
     }
 }
