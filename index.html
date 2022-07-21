@@ -20,38 +20,30 @@
                 <h1>Rock Paper Scissors Game</h1>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <button onclick="playRound(playerSelection, computerSelection)" class="css-button-fully-rounded--grey m-4">1 Round</button>
-                        <button onclick="game()"class="css-button-fully-rounded--grey m-4">5 Rounds</button>
-                    </div>
-                </div>
-            </div>
 
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 icon-container d-flex gap-4 p-4">
-                        <div class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
+                        <div id="rock" class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
                             <img class ="card-custom-image" src="./assets/images/rock-removebg-removebg-preview.png">
-                            <button class="css-button-fully-rounded--grey m-4">Rock</button>
+                            <button id="btn1" class="css-button-fully-rounded--grey m-4">Rock</button>
                         </div>
-                        <div class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
+                        <div id="paper" class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
                             <img class ="card-custom-image" src="./assets/images/paper-removebg-removebg-preview.png">
-                            <button class="css-button-fully-rounded--grey m-4">Paper</button>
+                            <button id="btn2" class="css-button-fully-rounded--grey m-4">Paper</button>
                         </div>
-                        <div class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
+                        <div id="scissors" class="card-custom rounded-4 d-flex flex-column justify-content-center align-items-center">
                             <img class ="card-custom-image" src="./assets/images/scissors-removebg-preview.png">
-                            <button class="css-button-fully-rounded--grey m-4">Scissors</button>
+                            <button id="btn3" class="css-button-fully-rounded--grey m-4">Scissors</button>
                         </div>                    
                     </div>
                 </div>
             </div>
 
             <div id="output" class="container text-center p-4 rounded-4">
-                <p id="player" class="h5 p-1">Your choice: Rock</p>
-                <p id="computer" class="h5 p-1">Computer choice: Scissors</p>
-                <p id="outcome" class="h4 p-1">You won! Rock beats Scissors</p>
+                <p id="player" class="h5 p-1"></p>
+                <p id="computer" class="h5 p-1"></p>
+                <p id="outcome" class="h4 p-1"></p>
             </div>
 
         </section>

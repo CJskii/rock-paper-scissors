@@ -28,7 +28,6 @@ function computerPrint(){
     return computer;
 }
 
-
 function clearPrint(){
     const output = document.querySelector('#output')
     const computer = document.querySelector('#computer')
