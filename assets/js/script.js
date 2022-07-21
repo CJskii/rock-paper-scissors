@@ -8,11 +8,36 @@ function computerPlay() {
     return myArray[Math.floor(Math.random() * myArray.length)]
 }
 
-function playRound(playerSelection, computerSelection){
+function playerPrint(){
     let player = playerSelection
-        player = window.prompt("Input Rock, Paper or Scissors: "); // prompts user for input
-        player = player.charAt(0).toUpperCase() + player.slice(1).toLowerCase();
-    let computer = myArray[Math.floor(Math.random() * myArray.length)]
+    const output = document.querySelector('#output') // target output div
+    const playerPrint = document.createElement('p')
+    console.log(this.output)
+    playerPrint.textContent = `Your choice: ${player}`
+    output.appendChild(playerPrint);
+    return player;
+}
+
+function computerPrint(){
+    let computer = computerPlay()
+    const output = document.querySelector('#output')
+    const computerPrint = document.createElement('p')
+    computerPrint.setAttribute('id', '#computer')
+    computerPrint.textContent = `Computer choice: ${computer}`
+    output.appendChild(computerPrint);
+    return computer;
+}
+
+function clearPrint(){
+    const output = document.querySelector('#output')
+    const computer = document.querySelector('#computer')
+    const player = document.querySelector('#player')
+}
+
+function playRound(playerSelection, computerSelection){
+    player = playerPrint();
+    computer = computerPrint();
+
     console.log("*Your choice: " + player) // prints in the console
     console.log("**Computer choice: " + computer); // prints in the console
     if (player == "Rock" && computer == "Scissors"){
@@ -38,7 +63,31 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
- function game(){
+
+
+
+
+function logText(e){
+    console.log(this.textContent)
+    playerSelection = this.textContent;
+    return playRound(playerSelection);
+}
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', logText, {
+    capture:true
+}))
+
+
+
+
+
+//game(); 
+
+//playRound()
+
+
+/*function game(){
     let point = 0;
     for (let i = 0; i < 5; i++ ){
         let winner = playRound();
@@ -61,10 +110,4 @@ function playRound(playerSelection, computerSelection){
         outcome = "Draw. Try again!"
         console.log("Final outcome of 5 games: " + outcome);
     } 
-}
-
-game(); 
-
-//playRound()
-
-
+}*/
