@@ -58,6 +58,12 @@ function removeText(){ // function loop through paragraphs and remove
         paragraph.remove()
     }
         });
+        const headers = document.querySelectorAll('h1')
+        headers.forEach(function(header){
+        if (header.textContent) { // remove if paragraph has text content
+        header.remove()
+    }
+        });
 }
 
 function playerPrint(){ // function to print player selection in document
