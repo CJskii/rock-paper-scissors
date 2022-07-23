@@ -58,7 +58,7 @@ function removeText(){ // function loop through paragraphs and remove
         paragraph.remove()
     }
         });
-        const headers = document.querySelectorAll('h1')
+        const headers = document.querySelectorAll('h1, h2')
         headers.forEach(function(header){
         if (header.textContent) { // remove if paragraph has text content
         header.remove()
@@ -107,7 +107,30 @@ function winnerPrint(){ // function to print winner outcome in document
     return winner;
 }
 
+function scorePrint(){
+    removeScore()
+    const score = document.querySelector('#score')
+    const playerScore = document.createElement('h5')
+    const computerScore = document.createElement('h5')
+    playerScore.setAttribute('class', 'px-3 mx-3')
+    playerScore.textContent = `Player: ${playerPoint}`
+    score.appendChild(playerScore)
+    computerScore.textContent = `Computer: ${computerPoint}`
+    computerScore.setAttribute('class', 'px-3 mx-4')
+    score.appendChild(computerScore)
+}
+
+function removeScore(){
+    const headers = document.querySelectorAll('h5')
+        headers.forEach(function(header){
+        if (header.textContent) { // remove if header has text content
+        header.remove()
+    }
+        });
+}
+
 function fiveRounds(){ // function to print winner of five rounds
+    scorePrint()
     if (playerPoint == 5){ // points condition
         removeText()
         const output = document.querySelector('#output')
