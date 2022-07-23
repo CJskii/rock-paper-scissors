@@ -73,8 +73,8 @@ img{
     border: 1px var(--color-base) solid;
 }
 
-#output{
-
+#player-score{
+    margin-left: 200px;
 }
 
 #output p, .card-custom p{
